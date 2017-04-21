@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment 6 - Shopping Cart</title>
+	<link rel="stylesheet" type="text/css" href="assignment6.css">
+	<link href='http://fonts.googleapis.com/css?family=Karla:400,400italic,700italic,700' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" src="assignment6.js"></script>
+</head>
+
+
+<body onload="main()">
+<div id="nav">
+	<form action="search.php" method="post" id="searchform">
+	<input type="text" name="keyword" id="keyword"></input>
+	<button type="submit" value="search" id="search" name="search">SEARCH</button></form>
+	<a href="signup.html">SIGN UP</a>
+	<a href="login.html">LOGIN</a> 
+</div>
+
+<div id="container">
+
+	<img src="photos/petfood.jpg" id="header">
+	<h1 id="welcome">Welcome!</h1>	
+	<p id="date"></p>
+
+
+<form id="form1" action="checkout.php" method="post" name="orderform">
+	<table>
+	<caption>DOG FOOD</caption>
+		<th>Item</th>
+		<th>Description</th>
+		<th>Price</th>
+		<th>Quantity</th>
+		<tr>
+			<td><img src="photos/sciencediet.jpg"></td>
+			<td id="0" name="0">Hill's Science Diet 17.5lb</td>
+			<td id="p0">30.99</td>
+			<td><input class="quantity" type="number" min="0" max="10" id="sciquantity" name="sciquantity" value="0" onchange="calculateTotals()"></td>
+		</tr>
+		<tr>
+			<td><img src="photos/eukanuba.jpg"></td>
+			<td id="1" name="1">Eukanuba 16.5lb</td>
+			<td id="p1">28.99</td>
+			<td><input class="quantity" type="number" min="0" max="10" id="eukquantity" name="eukquantity" value="0" onchange="calculateTotals()"></td>
+		</tr>
+		<tr>
+			<td><img src="photos/purinaone.jpg"></td>
+			<td id="2" name="2">Purina One Smartblend 16.5lb</td>
+			<td id="p2">23.99</td>
+			<td><input class="quantity" type="number" min="0" max="10" id="purquantity" name="purquantity" value="0" onchange="calculateTotals()"></td>
+		</tr>
+	</table>
+
+	<br><br>
+
+	<table>
+	<caption>CAT FOOD</caption>
+		<th>Item</th>
+		<th>Description</th>
+		<th>Price</th>
+		<th>Quantity</th>
+		<tr>
+			<td><img src="photos/fancyfeast.jpg"></td>
+			<td id="3" name="3">Fancy Feast Gourmet 12lb</td>
+			<td id="p3">20.99</td>
+			<td><input class="quantity" type="number" min="0" max="10" id="fanquantity" name="fanquantity" value="0" onchange="calculateTotals()"></td>
+		</tr>
+		<tr>
+			<td><img src="photos/meowmix.jpg"></td>
+			<td id="4" name="4">Meow Mix 14.2lb</td>
+			<td id="p4">10.99</td>
+			<td><input class="quantity" type="number" min="0" max="10" id="meoquantity" name="meoquantity" value="0" onchange="calculateTotals()"></td>
+		</tr>
+		<tr>
+			<td><img src="photos/iams.jpg"></td>
+			<td id="5" name="5">Iams Proactive Health 17.4lb</td>
+			<td id="p5">24.99</td>
+			<td><input class="quantity" type="number" min="0" max="10" id="iamquantity" name="iamquantity" value="0" onchange="calculateTotals()"></td>
+		</tr>
+	</table>
+
+	<br><br>
+
+	<div id="orderdetails">
+	<h2>Complete your order</h2>
+
+	<fieldset id="userinfo">
+	Full Name : <input type="text" id="fullname" name="fullname"><br>
+	Username : <input type="text" id ="username" name="username"><br>
+	Email : <input type="email" id="email" name="email"><br>
+	Phone Number : <input type="number" id="phone" name="phone">
+	</fieldset>
+	<br>
+	<fieldset id="shipinfo">
+	Shipping Address : <input type="text" name="address" id="address"><br>
+	City : <input type="text" name="city" id="city"><br>
+	State : <input type="text" maxlength="2" name="state" id="state"><br>
+	Zip Code : <input type="number" maxlength="5" name="zip" id="zip"><br><br>
+	<p id="pretax" name="pretax">Pre-Tax : $0</p>
+	<p id="tax" name="tax">+ Sales Tax (8.875%) : </p>
+	<p id="subtotal" name="subtotal">Subtotal : $0</p>
+	Delivery Option : <select id="delivery" name="delivery" id="delivery" onchange="calculateTotal()">
+		<option value="4.95" id="d0">5-7 days : $4.95</option>
+		<option value="9.95" id="d1">3-5 days : $9.95</option>
+		<option value="17.95" id="d2">1 day : $17.95</option>
+	</select><br><br>
+	Additional Shipping Requests/Comments :<br>
+	<textarea rows="5" cols="30" id="comments" name="comments">None.</textarea><br>
+	</fieldset>
+	<br>
+	<p id="grandtotal" name="grandtotal">Grand Total : $0</p>
+	Card Type : <input type="radio" name="card" id="amex" value="amex">Amex
+				<input type="radio" name="card" id="visa" value="visa">Visa
+				<input type="radio" name="card" id="mastercard" value="mastercard">Mastercard<br><br>
+	<input type="checkbox" name="signup" id="promoemail" value="promoemail" checked>Sign up for promotional emails.</input><br>
+	<input type="checkbox" name="signup" id= "postmail" value="postmail" checked>Send me promotions by post mail.</input>
+<br><br>
+	<button type="reset" value="Reset">RESET</button><button type="button" name="checkout" onclick="validateAll()">CHECKOUT</button>
+	</div>	
+		
+</form>
+
+	<br><br>
+
+<footer>image credit: petsmart</footer>
+</div>
+</body>
+
+</html>

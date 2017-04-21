@@ -1,0 +1,100 @@
+body {
+	font-family: Karla, Helvetica, Arial;
+	background-color: #FAFAFF;
+	color: #131736;
+}
+
+#container {
+	width: 800px;
+	margin: auto;
+}
+
+#nav {
+	font-family: Karla, Helvetica, Arial;
+	margin: 0px 0px 40px 0px;
+	padding: 5px 60px;
+	font-size: 14pt;
+	background-color: #131736;
+	text-align: right;
+}
+
+a:link {color: #FAFAFF;}
+a:visited {color: #FAFAFF;}
+a:hover {color: #294DC4;}
+a:active {color: #FAFAFF;}
+
+a {
+	text-decoration: none;
+	padding: 0px 20px;
+}
+
+#header {
+	width: 780px;
+	margin: 20px;
+}
+
+h1 {
+	font-weight: bold;
+	text-align: center;
+}
+
+#date {
+	text-align: center;
+	font-size: 10pt;
+}
+
+table {
+	border: 2px solid black;
+}
+
+caption {
+	font-size: 20pt;
+	color: #FAFAFF;
+	background-color: #131736;
+}
+
+img {
+	height: 120px;
+}
+
+
+td {
+	width: 200px;
+	text-align: center;
+}
+
+fieldset {
+	border: none;
+}
+
+.quantity {
+	width: 30px;
+}
+
+#orderdetails {
+	border: 2px solid black;
+	padding: 30px;
+	text-align: right;
+}
+
+footer {
+	text-align: center;
+	font-size: 8pt;
+	padding: 10px;
+}
+
+#subpage {
+	margin: 50px auto;
+	padding: 20px;
+	width: 300px;
+	border: 2px solid black;
+}
+
+#searchform {
+	position: absolute;
+	float: left;
+}
+
+.center {
+	text-align: center;
+}
